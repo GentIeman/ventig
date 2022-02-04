@@ -1,0 +1,64 @@
+@import "variables.styl"
+@import "mixins.styl"
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap')
+
+*
+  margin 0
+  padding 0
+  box-sizing border-box
+
+body
+  width 100vh
+  height 100%
+  background-color back-color
+
+
+/* стили для шапки сайта */
+.header
+  display flex
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 60px
+  padding 0 30px
+
+  .logo
+    margin auto
+
+  &__nav
+    position relative
+    width inherit
+    height inherit
+
+  &__list
+    display grid
+    grid-template-columns auto repeat(2, min-content)
+    place-items center
+    gap 0 30px
+    height inherit
+    list-style none
+
+  &__item
+    display grid
+    place-content center
+    width 100%
+    height inherit
+
+  &__link
+    display flex
+    justify-content center
+    align-items center
+
+  &__category
+    font-style(bold, 1.4rem, Roboto, text-color)
+
+  .btn
+    outline none
+    padding 5px
+    cursor pointer
+    border-radius 7px
+    transition background-color .5s linear
+
+    &:is(&_hover:hover, &_focus:focus)
+      background-color #313131
