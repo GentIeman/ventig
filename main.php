@@ -8,13 +8,8 @@ $smarty = new Smarty();
 $comments=R::dispense('comments');
 $posts = R::dispense('posts');
 $users = R::dispense('users');
-$feedback = R::dispense('feedback');
+$feedbacks = R::dispense('feedbacks');
 $eventlog = R::dispense('eventlog');
-
-$feedback -> user_id = 'test';
-$feedback -> content = 'test';
-
-R::store($feedback);
 
 
 // Отрисовка всего содержимого страницы в index.tpl
