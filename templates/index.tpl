@@ -49,7 +49,6 @@
                 </g>
             </svg>
         </a>
-        </div>
         <nav class="header__nav">
             <ul class="header__list">
                 <li class="header__item">
