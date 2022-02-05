@@ -38,6 +38,29 @@
     </nav>
 </header>
 <main>
+    <section class="posts">
+        <article class="post">
+            <header class="post__header">
+                <h2 class="post__headline">Тестовый пост</h2>
+            </header>
+            <p class="post__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eos ipsa
+                obcaecati quaerat quas quos, vero voluptates? At deserunt dolores ipsum. Consectetur cupiditate debitis
+                dicta distinctio obcaecati odio quibusdam repellendus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eos ipsa
+                obcaecati quaerat quas quos, vero voluptates? At deserunt dolores ipsum. Consectetur cupiditate debitis
+                dicta distinctio obcaecati odio quibusdam repellendus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eos ipsa
+                obcaecati quaerat quas quos, vero voluptates? At deserunt dolores ipsum. Consectetur cupiditate debitis
+                dicta distinctio obcaecati odio quibusdam repellendus.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet eos ipsa
+                obcaecati quaerat quas quos, vero voluptates? At deserunt dolores ipsum. Consectetur cupiditate debitis
+                dicta distinctio obcaecati odio quibusdam repellendus.
+            </p>
+            <time class="post__date-published">Дата публикации: 25/12/2022</time>
+            <div class="post__comments">Комментариев: 1</div>
+            <a href="" class="post__link btn btn_hover btn_focus">Читать статью</a>
+        </article>
+    </section>
 </main>
 </body>
 </html>
