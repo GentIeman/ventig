@@ -11,16 +11,17 @@ $users = R::dispense('users');
 $feedbacks = R::dispense('feedbacks');
 $eventlog = R::dispense('eventlog');
 
-
-// выборка всех постов из бд
-function getPosts($smarty)
-{
+if (isset($_GET['action'])) {
+    if ($_GET['action'] == 'post') {
+        $post = R::load('posts', $_GET['id']);
+        $smarty->assign('post', $post);
+        $smarty->assign('posts', $smarty->fetch('post.tpl'));
+    }
+} else {
     $posts = R::findAll('posts');
     $smarty->assign('all_posts', $posts);
-    $smarty->assign('content', $smarty->fetch('index.tpl'));
+    $smarty->assign('posts', $smarty->fetch('posts.tpl'));
 }
-
-getPosts($smarty);
 
 // Отрисовка всего содержимого страницы в index.tpl
 $smarty->display('index.tpl');
