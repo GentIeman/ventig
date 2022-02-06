@@ -25,10 +25,10 @@
                 <a href="" class="header__link btn btn_hover btn_focus">Классика</a>
             </li>
             <li class="header__item">
-                <a href="" class="header__link header__icon btn btn_hover btn_focus search"></a>
+                <a href="" class="header__link header__icon btn btn_hover btn_focus search" title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="" class="header__link header__icon btn btn_hover btn_focus profile"></a>
+                <a href="" class="header__link header__icon btn btn_hover btn_focus profile" title="Профиль"></a>
             </li>
         </ul>
     </nav>

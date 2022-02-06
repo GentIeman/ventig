@@ -21,6 +21,7 @@ body
   width 100%
   height 70px
   background-color back-color
+  z-index 2
 
   &__logo
     width 146px
@@ -80,6 +81,9 @@ body
   &:is(&_hover:hover, &_focus:focus, &_active)
     background-color #313131
     color primary-color
+
+  &_disabled
+    border solid 2px #ec4d4d
 
 
 main
