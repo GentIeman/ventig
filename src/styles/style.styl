@@ -169,3 +169,84 @@ main
   background-repeat no-repeat
   background-position center
   border-radius 50%
+
+/* стили для формы с комменатриями */
+.comments
+  position relative
+  height auto
+
+  .form
+    display grid
+    place-items center start
+    grid-template-columns auto 31px
+    width 700px
+    height 100%
+    position relative
+    margin-bottom 50px
+
+    &:after
+      content ''
+      position absolute
+      bottom -20px
+      right 0
+      transform translate(-50%, -50%)
+      background-color line
+      width 50%
+      height 1.5px
+
+
+    &__reply
+      width 660px
+      height 33px
+
+    &__btn
+      background-color transparent
+
+
+    &__icon
+      width 33px
+      height 33px
+      background-size 60%
+      background-repeat no-repeat
+      background-position center
+
+    .send
+      background-image url('../icons/send.svg')
+
+  .comment
+    display grid
+    grid-template-columns repeat(auto-fill, minmax(200px, 1fr))
+    grid-template-rows repeat(auto-fill, minmax(min-content, 1fr))
+    width 700px
+    height auto
+    border solid 1.5px border-color
+    padding 15px
+    border-radius 5px
+    margin-bottom 20px
+
+
+    &__content
+      grid-column 1 / 4
+      with 100%
+      text-align justify
+      font-style(normal, 1rem, Roboto, text-color)
+      margin-bottom 10px
+
+
+    &__date-publication,
+    &__author
+      width max-content
+      font-style(normal, 0.9rem, null, text-color-gr)
+
+.reply
+  resize none
+  outline none
+  background transparent
+  font-style(normal, null, Roboto, text-color)
+  border solid 1.5px border-color
+  transition border .2s linear
+  padding 0 10px
+  border-radius 10px
+
+  &:is(&_focus:focus, &_hover:hover)
+    border-color primary-color

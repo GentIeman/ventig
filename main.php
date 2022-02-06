@@ -12,10 +12,20 @@ $feedbacks = R::dispense('feedbacks');
 $eventlog = R::dispense('eventlog');
 
 if (isset($_GET['action'])) {
-    if ($_GET['action'] == 'post') {
-        $post = R::load('posts', $_GET['id']);
-        $smarty->assign('post', $post);
-        $smarty->assign('posts', $smarty->fetch('post.tpl'));
+    switch ($_GET['action']) {
+        case 'post':
+            $post = R::load('posts', $_GET['id']);
+            $smarty->assign('post', $post);
+            $smarty->assign('comments', $post->ownCommentsList);
+            $smarty->assign('posts', $smarty->fetch('post.tpl'));
+            break;
+        case 'add_comment':
+            $comments->comment_content = $_POST['comment'];
+            $posts = R::load('posts', $_GET['id']);
+            $posts->ownCommentsList[] = $comments;
+            R::store($posts);
+            header('Location:main.php?action=post&id=' . $_GET['id']);
+            break;
     }
 } else {
     $posts = R::findAll('posts');
