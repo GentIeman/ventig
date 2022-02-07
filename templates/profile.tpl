@@ -42,13 +42,13 @@
         </div>
         <ul class="profile__list">
             <li class="profile__item">
-                <p class="profile__username">Имя пользователя: <span class="username">Josh Smitch</span></p>
+                <p class="profile__username">Имя пользователя: <span class="username"> {$user.username}</span></p>
             </li>
             <li class="profile__item">
-                <p class="profile__status">Статус: Пользователь</p>
+                <p class="profile__status">Статус: {$user.status}</p>
             </li>
             <li class="profile__item">
-                <p class="profile__email">Почта: josh@gmail.ru</p>
+                <p class="profile__email">Почта: {$user.email}</p>
             </li>
         </ul>
     </section>
