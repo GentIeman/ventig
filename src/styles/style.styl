@@ -61,10 +61,10 @@ body
     width 31px
     height 31px
 
-  .search
+  .search-icon
     background-image url('../icons/search.svg')
 
-  .profile
+  .profile-icon
     background-image url('../icons/user.svg')
 
 /* глобалньные стили для кнопок */
@@ -73,12 +73,13 @@ body
   padding 5px
   cursor pointer
   border-radius 5px
-  transition background-color .5s linear
+  transition background-color .5s linear,
+  color .5s linear
   font-style(normal, 1.1rem, Roboto, not-active)
   text-decoration none
   border none
 
-  &:is(&_hover:hover, &_focus:focus, &_active)
+  &:is(&_hover:hover, &_focus:focus, &_active):not(&_delete)
     background-color #313131
     color primary-color
 
