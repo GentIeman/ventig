@@ -2,23 +2,24 @@
     <form class="post-editor__form form" action="profile.php?action=add_post&id={$user.id}" method="post">
         <fieldset class="form__wrapp">
             <label>
-                <input class="form__reply reply reply_focus reply_hover" type="text" name="title"
+                <input class="form__title-post reply reply_focus reply_hover" type="text" name="title"
                        placeholder="Заголовок поста" required>
             </label>
             <label>
-                <textarea class="form__textarea reply reply_focus reply_hover" type="text" name="description"
+                <textarea class="form__content-post reply reply_focus reply_hover" type="text" name="description"
                           placeholder="Описание поста" required></textarea>
             </label>
             <header class="form__header">
                 <h2 class="form__headline">Категория:</h2>
             </header>
-            <section class="form__category">
-                <label class="form__title">Новости
-                    <input class="form__radio reply reply_focus reply_hover" type="radio" name="category"
+            <section class="categorys">
+                <label class="categorys__title">Новости
+                    <input class="categorys__radio radio_hover radio_focus news" type="radio"
+                           name="category"
                            value="Новости" required>
                 </label>
-                <label class="form__title">Классика
-                    <input class="form__radio reply reply_focus reply_hover" type="radio" name="category"
+                <label class="categorys__title">Классика
+                    <input class="categorys__radio classic" type="radio" name="category"
                            value="Классика" required>
                 </label>
             </section>
