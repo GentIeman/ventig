@@ -8,7 +8,6 @@
     <meta name="copyright" content="Shepelev Ilya">
     <title>Ventag</title>
     <link rel="stylesheet" href="./src/styles/style.css">
-    <script src="https://unpkg.com/spacingjs" defer></script>
 </head>
 <body>
 <header class="header">
@@ -28,7 +27,7 @@
                 <a href="" class="header__link header__icon btn btn_hover btn_focus search-icon" title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="./profile.php?action=user"
+                <a href="./profile.php?action=user&id=4"
                    class="header__link header__icon btn btn_hover btn_focus profile-icon"
                    title="Профиль"></a>
             </li>
