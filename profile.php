@@ -22,6 +22,11 @@ if (isset($_GET['action'])) {
             R::store($users);
             header('Location:profile.php?action=user&id=' . $_GET['id']);
             break;
+        case 'delete_post':
+            $post = R::load('posts', $_GET['post_id']);
+            R::trash($post);
+            header('Location:profile.php?action=user&id=' . $_GET['user_id']);
+            break;
     }
 }
 $smarty->display('profile.tpl');
