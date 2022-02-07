@@ -8,7 +8,7 @@
     <meta name="copyright" content="Shepelev Ilya">
     <title>Ventag</title>
     <link rel="stylesheet" href="./src/styles/style.css">
-    <script src="https://unpkg.com/spacingjs" defer></script>
+    <script defer src="./src/scripts/index.js"></script>
 </head>
 <body>
 <header class="header">
@@ -52,24 +52,30 @@
             </li>
         </ul>
     </section>
-    <section class="your-posts">
-        <header class="your-posts__header">
-            <h1 class="your-posts__headline">Вашы посты: </h1>
-        </header>
-        <article class="post">
-            <header class="post__header">
-                <h2 class="post__headline">Тестовый пост</h2>
+    {if $posts}
+        <section class="your-posts">
+            <header class="your-posts__header">
+                <h1 class="your-posts__headline">Вашы посты: </h1>
             </header>
-            <p class="post__description">Описание тестового поста</p>
-            <p class="post__category">Категория: Новости</p>
-            <time class="post__date-published">Дата
-                публикации: 22.09.2022
-            </time>
-            <div class="post__comments">Комментариев: 1</div>
-            <a href="" class="post__link btn btn_hover btn_focus">Читать статью</a>
-            <a href="" class="post__link btn btn_hover btn_focus btn_delete">Удалить</a>
-        </article>
-    </section>
+            {foreach from=$posts item=post}
+                <article class="post">
+                    <header class="post__header">
+                        <h2 class="post__headline">{$post.post_title}</h2>
+                    </header>
+                    <p class="post__description">{$post.post_description}</p>
+                    <p class="post__category">Категория: {$post.post_category}</p>
+                    <time class="post__date-published">Дата
+                        публикации: {$post.post_date_published}
+                    </time>
+                    <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
+                    <a href="" class="post__link btn btn_hover btn_focus">Читать статью</a>
+                    <a href="" class="post__link btn btn_hover btn_focus btn_delete">Удалить</a>
+                </article>
+            {/foreach}
+        </section>
+    {/if}
+    <button class="add-post btn btn_hover btn_focus"></button>
+    {include file="add_post.tpl"}
 </main>
 </body>
 </html>
