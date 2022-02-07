@@ -85,6 +85,13 @@ body
   &_disabled
     border solid 2px #ec4d4d
 
+  &_delete
+    border solid 2px #ec4d4d
+    color text-color
+
+    &:hover
+      color #ec4d4d
+
 
 main
   display grid
@@ -160,6 +167,13 @@ main
     grid-column 3 / 4
     justify-self end
     align-self center
+
+    &:nth-child(even)
+      grid-row 5 / 6
+      margin-bottom 10px
+
+    &:nth-child(odd)
+      grid-row 6 / 7
 
 
 .back-btn
@@ -254,3 +268,45 @@ main
 
   &:is(&_focus:focus, &_hover:hover)
     border-color primary-color
+
+/* стили для профиля */
+.profile
+  display grid
+  grid-template-columns 250px 1fr
+  place-items center start
+  width 700px
+  min-height 250px
+  border solid 1.5px border-color
+  border-radius 10px
+
+  &__avatar
+    justify-self center
+    padding 60px
+    border solid 1.5px border-color
+    border-radius 50%
+
+  &__list
+    list-style none
+
+  &__item
+    margin 10px 0
+
+  &__username
+    font-style(normal, 1.2rem, Roboto, text-color)
+
+  .username
+    color primary-color
+    font-weight bold
+
+  &__status,
+  &__email
+    font-style(normal, 0.9rem, Roboto, text-color-gr)
+
+.your-posts
+  margin-top 10px
+
+  &__header
+    margin 20px 0
+
+  &__headline
+    font-style(normal, 2rem, Roboto, text-color)
