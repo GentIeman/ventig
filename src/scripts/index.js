@@ -1,7 +1,7 @@
 const addPostBtn = document.querySelector('.add-post')
 const postEditor = document.querySelector('.post-editor')
 const postEdit = document.querySelector('.post-edit')
-const editPostBtn = document.querySelector('.post__edit')
+const editPostBtn = document.querySelector('.edit-post')
 
 addPostBtn.addEventListener('click', () => {
     postEditor.style.display = 'grid'

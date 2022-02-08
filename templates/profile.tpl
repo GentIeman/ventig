@@ -71,7 +71,7 @@
                     <a href="main.php?action=post&id={$post.id}" class="post__link post__read btn btn_hover btn_focus">Читать
                         статью</a>
                     <button
-                            class="post__link post__edit btn btn_hover btn_focus">Редактировать
+                            class="post__link edit-post post__edit btn btn_hover btn_focus">Редактировать
                     </button>
                     <a href="profile.php?action=delete_post&post_id={$post.id}&user_id={$user.id}"
                        class="post__link post__delete btn btn_hover btn_focus btn_delete">Удалить</a>

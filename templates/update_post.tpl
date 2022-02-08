@@ -4,11 +4,11 @@
         <fieldset class="form__wrapp">
             <label>
                 <input class="form__title-post reply reply_focus reply_hover" type="text" name="title"
-                       placeholder="Заголовок поста" required value="{$post.post_title}">
+                       placeholder="Заголовок поста" value="{$post.post_title}">
             </label>
             <label>
                 <textarea class="form__content-post reply reply_focus reply_hover" type="text" name="description"
-                          placeholder="Описание поста" required>{$post.post_description}</textarea>
+                          placeholder="Описание поста">{$post.post_description}</textarea>
             </label>
             <header class="form__header">
                 <h2 class="form__headline">Категория:</h2>
