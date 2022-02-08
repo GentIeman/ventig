@@ -120,8 +120,8 @@ body
 main
   display grid
   place-items center
+  position relative
   margin-top 80px
-
 
 /* стили для блока с постами */
 .posts
@@ -217,6 +217,7 @@ main
   background-repeat no-repeat
   background-position center
   border-radius 50%
+  z-index 10
 
 /* стили для формы с комменатриями */
 .comments
@@ -249,7 +250,7 @@ main
 
     &__btn
       background-color transparent
-
+      width max-content
 
     &__icon
       width 33px
@@ -263,8 +264,9 @@ main
 
   .comment
     display grid
-    grid-template-columns repeat(auto-fill, minmax(200px, 1fr))
+    grid-template-columns repeat(auto-fill, minmax(min-content, 1fr))
     grid-template-rows repeat(auto-fill, minmax(min-content, 1fr))
+    place-items center start
     position relative
     width 700px
     height auto
@@ -272,7 +274,6 @@ main
     padding 15px
     border-radius 5px
     margin-bottom 20px
-
 
     &__content
       grid-column 1 / 4
@@ -288,6 +289,18 @@ main
     &__author
       width max-content
       font-style(normal, 0.9rem, null, text-color-gr)
+
+    &__edit-btn
+      position absolute
+      top 50%
+      right -60px
+      transform translate(-50%, -50%)
+      width 31px
+      height 31px
+      background-image url('../icons/edit.svg')
+      background-size 65%
+      background-repeat no-repeat
+      background-position center
 
 .reply
   resize none
