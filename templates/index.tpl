@@ -12,10 +12,10 @@
 <body>
 <header class="header">
     <nav class="header__nav">
-        <a class="header__logo" tabindex="-1" href=""></a>
+        <a class="header__logo" tabindex="-1" href="./main.php"></a>
         <ul class="header__list">
             <li class="header__item">
-                <a href="" class="header__link btn btn_hover btn_focus btn_active">Главная</a>
+                <a href="./main.php" class="header__link btn btn_hover btn_focus btn_active">Главная</a>
             </li>
             <li class="header__item">
                 <a href="" class="header__link btn btn_hover btn_focus">Новинки</a>
