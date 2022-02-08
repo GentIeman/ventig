@@ -17,6 +17,10 @@ if (isset($_GET['action'])) {
             $post = R::load('posts', $_GET['id']);
             $smarty->assign('post', $post);
             $smarty->assign('comments', $post->ownCommentsList);
+            $smarty->assign('is_comment_edit', isset($_GET['edit_comment']));
+            if (isset($_GET['edit_comment'])) {
+                $smarty->assign('comment', R::load('comments', $_GET['edit_comment']));
+            }
             $smarty->assign('posts', $smarty->fetch('post.tpl'));
             break;
         case 'add_comment':
@@ -26,6 +30,12 @@ if (isset($_GET['action'])) {
             R::store($posts);
             header('Location:main.php?action=post&id=' . $_GET['id']);
             break;
+        case 'save_comment':
+            $comment = R::load('comments', $_GET['comment_id']);
+            $comment->comment_content = $_POST['comment'];
+            R::store($comment);
+            $_GET['id'] = $comment->post_id;
+            header('Location:main.php?action=post&id=' . $_GET['post_id']);
     }
 } else {
     $posts = R::findAll('posts');
