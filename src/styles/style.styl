@@ -191,13 +191,20 @@ main
     justify-self end
     align-self center
 
-    &:nth-child(even)
-      grid-row 5 / 6
-      margin-bottom 10px
+  &__delete
+    grid-column 1 / 2
+    grid-row 7 / 8
+    justify-self start
+    margin-top 10px
 
-    &:nth-child(odd)
-      grid-row 6 / 7
+  &__read
+    grid-row 6 / 7
 
+  &__edit
+    grid-column 1 / 2
+    grid-row 6 / 7
+    justify-self start
+    background-color transparent
 
 .back-btn
   position absolute
@@ -351,8 +358,9 @@ main
   background-color transparent
 
 
-/* Стили для формы создания поста */
-.post-editor
+/* Стили для формы создания и редактирования поста */
+.post-editor,
+.post-edit
   display none
   place-items center
   position fixed

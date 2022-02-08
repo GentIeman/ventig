@@ -27,6 +27,14 @@ if (isset($_GET['action'])) {
             R::trash($post);
             header('Location:profile.php?action=user&id=' . $_GET['user_id']);
             break;
+        case 'update_post':
+            $posts = R::load('posts', $_GET['post_id']);
+            $posts->post_title = $_POST['title'];
+            $posts->post_description = $_POST['description'];
+            $posts->post_category = $_POST['category'];
+            R::store($posts);
+            header("Location:profile.php?action=user&id=" . $_GET['user_id']);
+            break;
     }
 }
 $smarty->display('profile.tpl');

@@ -70,6 +70,9 @@
                     <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
                     <a href="main.php?action=post&id={$post.id}" class="post__link btn btn_hover btn_focus">Читать
                         статью</a>
+                    <button
+                            class="post__link post__edit btn btn_hover btn_focus">Редактировать
+                    </button>
                     <a href="profile.php?action=delete_post&post_id={$post.id}&user_id={$user.id}"
                        class="post__link btn btn_hover btn_focus btn_delete">Удалить</a>
                 </article>
@@ -78,6 +81,7 @@
     {/if}
     <button class="add-post btn btn_hover btn_focus"></button>
     {include file="add_post.tpl"}
+    {include file="update_post.tpl"}
 </main>
 </body>
 </html>
