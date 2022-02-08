@@ -258,6 +258,7 @@ main
     display grid
     grid-template-columns repeat(auto-fill, minmax(200px, 1fr))
     grid-template-rows repeat(auto-fill, minmax(min-content, 1fr))
+    position relative
     width 700px
     height auto
     border solid 1.5px border-color
@@ -268,10 +269,12 @@ main
 
     &__content
       grid-column 1 / 4
-      with 100%
+      width 100%
+      height auto
       text-align justify
       font-style(normal, 1rem, Roboto, text-color)
       margin-bottom 10px
+      word-wrap break-word
 
 
     &__date-publication,
