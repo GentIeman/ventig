@@ -24,7 +24,9 @@
                 <a href="" class="header__link btn btn_hover btn_focus">Классика</a>
             </li>
             <li class="header__item">
-                <a href="" class="header__link header__icon btn btn_hover btn_focus search-icon" title="Поиск"></a>
+                <a href="./search.php" ы
+                   class="header__link header__icon btn btn_hover btn_focus search-icon"
+                   title="Поиск"></a>
             </li>
             <li class="header__item">
                 <a href="./profile.php?action=user&id=4"
