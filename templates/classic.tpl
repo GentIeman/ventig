@@ -15,13 +15,13 @@
         <a class="header__logo" tabindex="-1" href="./main.php"></a>
         <ul class="header__list">
             <li class="header__item">
-                <a href="./main.php" class="header__link btn btn_hover btn_focus btn_active">Главная</a>
+                <a href="./main.php" class="header__link btn btn_hover btn_focus">Главная</a>
             </li>
             <li class="header__item">
                 <a href="./news.php" class="header__link btn btn_hover btn_focus">Новинки</a>
             </li>
             <li class="header__item">
-                <a href="./classic.php" class="header__link btn btn_hover btn_focus">Классика</a>
+                <a href="./classic.php" class="header__link btn btn_hover btn_focus btn_active">Классика</a>
             </li>
             <li class="header__item">
                 <a href="./search.php" ы
