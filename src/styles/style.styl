@@ -290,17 +290,26 @@ main
       width max-content
       font-style(normal, 0.9rem, null, text-color-gr)
 
-    &__edit-btn
+    &__btn
+      width 31px
+      height 31px
+      background-size 65%
+      background-repeat no-repeat
+      background-position center
+
+    .edit-btn
       position absolute
       top 50%
       right -60px
       transform translate(-50%, -50%)
-      width 31px
-      height 31px
       background-image url('../icons/edit.svg')
-      background-size 65%
-      background-repeat no-repeat
-      background-position center
+
+    .delete-btn
+      position absolute
+      top 50%
+      right -100px
+      transform translate(-50%, -50%)
+      background-image url('../icons/cross.svg')
 
 .reply
   resize none
