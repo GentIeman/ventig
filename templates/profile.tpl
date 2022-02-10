@@ -29,7 +29,8 @@
                    title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="" class="header__link header__icon btn btn_hover btn_focus profile-icon btn_active"
+                <a href="./profile.php"
+                   class="header__link header__icon btn btn_hover btn_focus profile-icon btn_active"
                    title="Профиль"></a>
             </li>
         </ul>
