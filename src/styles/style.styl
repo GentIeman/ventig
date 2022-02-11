@@ -476,3 +476,96 @@ main
     background-repeat no-repeat
     background-position center
     background-color transparent
+
+/* стилия для аутентификации */
+.auth
+  display flex
+  position relative
+  width 1000px
+  height 500px
+  border solid 1.5px border-color
+  border-radius 10px
+  overflow hidden
+
+  .singin,
+  .singup
+    display flex
+    align-items center
+    justify-content flex-start
+    position relative
+    flex-direction column
+    width 100%
+    height inherit
+    padding 30px
+
+    &__header
+      position relative
+      margin-bottom 40px
+
+    &__headline
+      font-style(normal, 2rem, Roboto, text-color)
+
+    &__form
+      display inherit
+      flex-direction column
+      align-items center
+      justify-content space-between
+      height 400px
+
+    &__input
+      width 400px
+      height 40px
+      margin-bottom 30px
+
+    &__btn
+      padding 10px 20px
+      background-color transparent
+      margin-bottom 40px
+
+      &_small
+        padding 5px 10px
+        font-size 0.9rem
+        text-decoration underline
+
+.partition
+  position absolute
+  top 0
+  left 0
+  width calc(997px / 2)
+  height inherit
+  background-color back-color
+  border-right solid 2px primary-color
+  transition all 1s ease-in
+  overflow hidden
+
+  &_slide
+    transition all 1s ease-in
+    transform translateX(100%)
+    border-left solid 2px primary-color
+    border-right none
+
+  &__circle
+    width 300px
+    height 300px
+    border-radius 50%
+    background-color primary-color
+    transition transform 1s linear
+
+    &_left
+      transform translateX(140%)
+      transition transform 1s linear
+
+    &_right
+      transform translateX(-130%)
+      transition transform 1s linear
+
+    &:first-child
+      position absolute
+      top -60px
+      left -20%
+
+    &:last-child
+      position absolute
+      bottom -60px
+      right -20%
+
