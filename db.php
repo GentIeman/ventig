@@ -8,6 +8,8 @@ $psw = "";
 $charset = "utf8";
 R::setup("mysql:host=$host;dbname=$db_name;charset=$charset", $user, $psw);
 
+session_start();
+
 if (!R::testConnection()) {
     echo 'No DB connection!';
     exit;
