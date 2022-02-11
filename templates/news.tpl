@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="author" content="Shepeleb Ilya">
     <meta name="copyright" content="Shepelev Ilya">
-    <title>Ventag</title>
+    <title>Новинки</title>
     <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
@@ -29,7 +29,7 @@
                    title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="./profile.php?action=user&id=4"
+                <a href="./profile.php?action=user&id={$user}"
                    class="header__link header__icon btn btn_hover btn_focus profile-icon"
                    title="Профиль"></a>
             </li>

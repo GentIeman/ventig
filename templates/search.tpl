@@ -8,7 +8,6 @@
     <meta name="copyright" content="Shepelev Ilya">
     <title>Ventag</title>
     <link rel="stylesheet" href="./src/styles/style.css">
-    <script defer src="./src/scripts/index.js"></script>
 </head>
 <body>
 <header class="header">
@@ -29,7 +28,7 @@
                    title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="./profile.php?action=user&id=4"
+                <a href="./profile.php?action=user&id={$user}"
                    class="header__link header__icon btn btn_hover btn_focus profile-icon"
                    title="Профиль"></a>
             </li>

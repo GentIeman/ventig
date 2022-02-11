@@ -14,4 +14,6 @@ if (isset($_GET['action'])) {
 }
 
 
+$smarty->assign('user', $_SESSION['user']->id);
+
 $smarty->display('search.tpl');

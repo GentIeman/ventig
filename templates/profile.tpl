@@ -8,7 +8,7 @@
     <meta name="copyright" content="Shepelev Ilya">
     <title>Ventag</title>
     <link rel="stylesheet" href="./src/styles/style.css">
-    <script defer src="./src/scripts/index.js"></script>
+    <script async src="./src/scripts/profile.js"></script>
 </head>
 <body>
 <header class="header">
@@ -29,7 +29,7 @@
                    title="Поиск"></a>
             </li>
             <li class="header__item">
-                <a href="./profile.php"
+                <a href=""
                    class="header__link header__icon btn btn_hover btn_focus profile-icon btn_active"
                    title="Профиль"></a>
             </li>
@@ -65,7 +65,9 @@
                         <h2 class="post__headline">{$post.post_title}</h2>
                     </header>
                     <p class="post__description">{$post.post_description}</p>
-                    <p class="post__category">Категория: {$post.post_category}</p>
+                    {if !empty($post.post_category)}
+                        <p class="post__category">Категория: {$post.post_category}</p>
+                    {/if}
                     <time class="post__date-published">Дата
                         публикации: {$post.post_date|date_format:"d.m.Y"}
                     </time>
