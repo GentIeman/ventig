@@ -18,7 +18,7 @@ if (isset($_GET['action'])) {
             $smarty->assign('post', $post);
             $smarty->assign('comments', $post->ownCommentsList);
             $smarty->assign('is_comment_edit', isset($_GET['edit_comment']));
-            $smarty->assign('user', $_SESSION['user']->id);
+            $smarty->assign('user', $_SESSION['user']);
             if (isset($_GET['edit_comment'])) {
                 $smarty->assign('comment', R::load('comments', $_GET['edit_comment']));
             }
@@ -45,7 +45,7 @@ if (isset($_GET['action'])) {
 } else {
     $posts = R::findAll('posts');
     $smarty->assign('all_posts', $posts);
-    $smarty->assign('user', $_SESSION['user']->id);
+    $smarty->assign('user', $_SESSION['user']);
     $smarty->assign('posts', $smarty->fetch('posts.tpl'));
 }
 
