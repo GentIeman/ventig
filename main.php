@@ -18,7 +18,9 @@ if (isset($_GET['action'])) {
             $smarty->assign('post', $post);
             $smarty->assign('comments', $post->ownCommentsList);
             $smarty->assign('is_comment_edit', isset($_GET['edit_comment']));
-            $smarty->assign('user', $_SESSION['user']);
+            if (isset($_SESSION['user'])) {
+                $smarty->assign('user', $_SESSION['user']);
+            }
             if (isset($_GET['edit_comment'])) {
                 $smarty->assign('comment', R::load('comments', $_GET['edit_comment']));
             }
@@ -27,16 +29,19 @@ if (isset($_GET['action'])) {
         case 'add_comment':
             $comments->comment_content = $_POST['comment'];
             $posts = R::load('posts', $_GET['id']);
+            $users = R::load('users', $_GET['user_id']);
             $posts->ownCommentsList[] = $comments;
-            R::store($posts);
+            $users->ownCommentsList[] = $comments;
+            R::storeAll([$posts, $users]);
             header('Location:main.php?action=post&id=' . $_GET['id']);
             break;
         case 'save_comment':
             $comment = R::load('comments', $_GET['comment_id']);
             $comment->comment_content = $_POST['comment'];
+            $comment->users_id = $_GET['user_id'];
             R::store($comment);
-            $_GET['id'] = $comment->post_id;
             header('Location:main.php?action=post&id=' . $_GET['post_id']);
+            break;
         case 'delete_comment':
             $comment = R::load('comments', $_GET['comment_id']);
             R::trash($comment);

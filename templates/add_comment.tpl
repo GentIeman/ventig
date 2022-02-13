@@ -1,4 +1,4 @@
-<form class="form" action="main.php?action=add_comment&id={$post.id}" method="post">
+<form class="form" action="main.php?action=add_comment&id={$post.id}&user_id={$user.id}" method="post">
     <label>
         <input name="comment" class="form__reply reply reply_focus reply_hover"
                placeholder="Добавить комментарий...">
