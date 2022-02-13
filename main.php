@@ -45,7 +45,9 @@ if (isset($_GET['action'])) {
 } else {
     $posts = R::findAll('posts');
     $smarty->assign('all_posts', $posts);
-    $smarty->assign('user', $_SESSION['user']);
+    if (isset($_SESSION['user'])) {
+        $smarty->assign('user', $_SESSION['user']);
+    }
     $smarty->assign('posts', $smarty->fetch('posts.tpl'));
 }
 

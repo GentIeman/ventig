@@ -28,11 +28,19 @@
                    class="header__link header__icon btn btn_hover btn_focus search-icon"
                    title="Поиск"></a>
             </li>
-            <li class="header__item">
-                <a href="./profile.php?action=user&id={$user.id}"
-                   class="header__link header__icon btn btn_hover btn_focus profile-icon"
-                   title="Профиль"></a>
-            </li>
+            {if !empty($user)}
+                <li class="header__item">
+                    <a href="./profile.php?action=user&id={$user.id}"
+                       class="header__link header__icon btn btn_hover btn_focus profile-icon"
+                       title="Профиль"></a>
+                </li>
+            {else}
+                <li class="header__item">
+                    <a href="./auth.php"
+                       class="header__link header__icon btn btn_hover btn_focus profile-icon"
+                       title="Профиль"></a>
+                </li>
+            {/if}
         </ul>
     </nav>
 </header>

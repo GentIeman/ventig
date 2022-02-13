@@ -8,7 +8,9 @@ $posts = R::dispense('posts');
 
 $posts = R::find('posts', 'post_category LIKE ?', ["%классика%"]);
 $smarty->assign('all_posts', $posts);
-$smarty->assign('user', $_SESSION['user']);
+if (isset($_SESSION['user'])) {
+    $smarty->assign('user', $_SESSION['user']);
+}
 $smarty->assign('posts', $smarty->fetch('posts.tpl'));
 
 // Отрисовка всего содержимого страницы в index.tpl
