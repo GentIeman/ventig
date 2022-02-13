@@ -53,6 +53,9 @@
                 <p class="profile__email">Почта: {$user.email}</p>
             </li>
         </ul>
+        <div class="profile__logout">
+            <a href="./profile.php?action=logout" class="profile__link btn btn_hover btn_focus btn_delete">Выйти</a>
+        </div>
     </section>
     {if $posts}
         <section class="your-posts">

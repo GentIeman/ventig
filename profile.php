@@ -35,6 +35,10 @@ if (isset($_GET['action'])) {
             R::store($posts);
             header("Location:profile.php?action=user&id=" . $_GET['user_id']);
             break;
+        case 'logout':
+            unset($_SESSION['user']);
+            header("Location:main.php");
+            break;
     }
 }
 $smarty->display('profile.tpl');
