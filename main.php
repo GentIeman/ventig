@@ -17,7 +17,7 @@ if (isset($_GET['action'])) {
             $post = R::load('posts', $_GET['id']);
             $smarty->assign('post', $post);
             $smarty->assign('comments', $post->ownCommentsList);
-            $smarty->assign('is_comment_edit', isset($_GET['edit_comment']));
+            $smarty->assign('isCommentEdit', isset($_GET['edit_comment']));
             if (isset($_SESSION['user'])) {
                 $smarty->assign('user', $_SESSION['user']);
             }

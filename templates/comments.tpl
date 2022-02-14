@@ -1,5 +1,5 @@
 <section class="comments">
-    {if $is_comment_edit}
+    {if $isCommentEdit}
         {include file="edit_comm.tpl"}
     {elseif !empty($user)}
         {include file="add_comment.tpl"}

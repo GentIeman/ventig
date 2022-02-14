@@ -21,10 +21,10 @@
                 <a href="./news.php" class="header__link btn btn_hover btn_focus">Новинки</a>
             </li>
             <li class="header__item">
-                <a href="./classic.php" class="header__link btn btn_hover btn_focus btn_active">Классика</a>
+                <a href="" class="header__link btn btn_hover btn_focus btn_active">Классика</a>
             </li>
             <li class="header__item">
-                <a href="./search.php" ы
+                <a href="./search.php"
                    class="header__link header__icon btn btn_hover btn_focus search-icon"
                    title="Поиск"></a>
             </li>

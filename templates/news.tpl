@@ -18,7 +18,7 @@
                 <a href="./main.php" class="header__link btn btn_hover btn_focus">Главная</a>
             </li>
             <li class="header__item">
-                <a href="./news.php" class="header__link btn btn_hover btn_focus btn_active">Новинки</a>
+                <a href="" class="header__link btn btn_hover btn_focus btn_active">Новинки</a>
             </li>
             <li class="header__item">
                 <a href="./classic.php" class="header__link btn btn_hover btn_focus">Классика</a>

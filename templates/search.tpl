@@ -24,7 +24,7 @@
                 <a href="./classic.php" class="header__link btn btn_hover btn_focus">Классика</a>
             </li>
             <li class="header__item">
-                <a href="./search.php" class="header__link header__icon btn btn_hover btn_focus search-icon btn_active"
+                <a href="" class="header__link header__icon btn btn_hover btn_focus search-icon btn_active"
                    title="Поиск"></a>
             </li>
             {if !empty($user)}
