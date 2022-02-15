@@ -37,7 +37,7 @@
                 </li>
             {else}
                 <li class="header__item">
-                    <a href="./auth.php"
+                    <a href=""
                        class="header__link header__icon btn btn_hover btn_focus profile-icon"
                        title="Профиль"></a>
                 </li>
@@ -46,6 +46,12 @@
     </nav>
 </header>
 <main>
+    {if isset($isPassword) != false}
+        {include file="hint.tpl" title="Вы ввели неверный пароль"}
+    {/if}
+    {if isset($isUser) != false}
+        {include file="hint.tpl" title="Пользователь ненайден"}
+    {/if}
     <section class="auth">
         <section class="singin">
             <header class="singin__header">

@@ -5,7 +5,6 @@ require("db.php");
 $users = R::dispense('users');
 $smarty = new Smarty();
 
-
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'singup':
@@ -22,13 +21,14 @@ if (isset($_GET['action'])) {
             if ($user) {
                 if (password_verify($_POST['password'], $user->password)) {
                     $_SESSION['user'] = $user;
+                    header('Location:main.php');
+                } else {
+                    $smarty->assign('isPassword', false);
                 }
+            } else {
+                $smarty->assign('isUser', false);
             }
-            header('Location:main.php');
     }
 }
 
-
 $smarty->display('auth.tpl');
-
-
