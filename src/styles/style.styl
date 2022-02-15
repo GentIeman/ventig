@@ -574,3 +574,33 @@ main
       bottom -60px
       right -20%
 
+.hint
+  position absolute
+  top 20%
+  left 50%
+  transform translate(-50%, -50%)
+  z-index 2
+  padding 1rem 2rem
+  background-color back-color
+  border solid 2px red
+  border-radius 10px
+  animation fade-up 3s ease-out
+  opacity 0
+
+
+  &__content
+    font-style(normal, 1rem, Roboto, text-color)
+
+  @keyframes fade-up {
+    0% {
+      opacity 0
+    }
+
+    50% {
+      opacity 1
+    }
+
+    100% {
+      opacity 0
+    }
+  }
