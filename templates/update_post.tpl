@@ -1,7 +1,7 @@
 <section class="post-edit">
     <form class="post-edit__form form" action="profile.php?action=update_post&post_id={$post.id}&user_id={$user.id}"
           method="post">
-        <fieldset class="form__wrapp">
+        <fieldset class="form__wrap">
             <label>
                 <input class="form__title-post reply reply_focus reply_hover" type="text" name="title"
                        placeholder="Заголовок поста" value="{$post.post_title}">
@@ -24,7 +24,7 @@
                            value="Классика">
                 </label>
             </section>
-            <button type="submit" class="form__btn btn btn_hover btn_focus">Редактировать пост</button>
+            <button type="submit" class="post-edit__btn btn btn_hover btn_focus">Редактировать пост</button>
         </fieldset>
     </form>
 </section>
