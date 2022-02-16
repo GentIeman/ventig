@@ -8,7 +8,7 @@
     <meta name="copyright" content="Shepelev Ilya">
     <title>Profile</title>
     <link rel="stylesheet" href="./src/styles/style.css">
-    <script async src="./src/scripts/profile.js"></script>
+    <script defer src="./src/scripts/profile.js"></script>
 </head>
 <body>
 <header class="header">
@@ -53,14 +53,17 @@
                 <p class="profile__email">Почта: {$user.email}</p>
             </li>
         </ul>
+        <div class="profile__edit">
+            <button class="profile__edit-profile btn btn_hover btn_focus">Редактировать профиль</button>
+        </div>
         <div class="profile__logout">
             <a href="./profile.php?action=logout" class="profile__link btn btn_hover btn_focus btn_delete">Выйти</a>
         </div>
     </section>
     {if $posts}
-        <section class="your-posts">
-            <header class="your-posts__header">
-                <h1 class="your-posts__headline">Вашы посты: </h1>
+        <section class="user-posts">
+            <header class="user-posts__header">
+                <h1 class="user-posts__headline">Вашы посты: </h1>
             </header>
             {foreach from=$posts item=post}
                 <article class="post">
@@ -77,9 +80,7 @@
                     <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
                     <a href="main.php?action=post&id={$post.id}" class="post__link post__read btn btn_hover btn_focus">Читать
                         статью</a>
-                    <button
-                            class="post__link edit-post post__edit btn btn_hover btn_focus">Редактировать
-                    </button>
+                    <button class="post__link edit-post post__edit btn btn_hover btn_focus">Редактировать</button>
                     <a href="profile.php?action=delete_post&post_id={$post.id}&user_id={$user.id}"
                        class="post__link post__delete btn btn_hover btn_focus btn_delete">Удалить</a>
                 </article>
@@ -89,6 +90,7 @@
     <button class="add-post btn btn_hover btn_focus"></button>
     {include file="add_post.tpl"}
     {include file="update_post.tpl"}
+    {include file="profile_edit.tpl" lol="Привет"}
 </main>
 </body>
 </html>

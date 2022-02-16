@@ -362,7 +362,51 @@ main
     bottom 20px
     right 20px
 
-.your-posts
+  &__wrap
+    display none
+    place-items center
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100vh
+    background-color rgba(0, 0, 0, 0.5)
+    z-index 2
+
+  &__edit-profile
+    position absolute
+    bottom 10px
+    left 30px
+    background-color transparent
+    font-size 1rem
+
+  &__form
+    width 800px
+    height auto
+
+  &__form-wrap
+    display flex
+    flex-direction column
+    position relative
+    gap 20px
+    border solid 1.5px border-color
+    border-radius 5px
+    background-color back-color
+    padding 20px
+    height inherit
+
+  &__reply
+    width 100%
+    height 40px
+    border-radius 5px
+
+  &__btn
+    width max-content
+    background-color transparent
+    align-self center
+
+
+.user-posts
   margin-top 10px
 
   &__header
@@ -398,11 +442,16 @@ main
   background-color rgba(0, 0, 0, 0.5)
   z-index 3
 
+  &__btn
+    width max-content
+    background-color transparent
+    align-self center
+
   .form
     width 800px
     height auto
 
-    &__wrapp
+    &__wrap
       display flex
       flex-direction column
       position relative
@@ -423,7 +472,6 @@ main
       height 60px
       border-radius 5px
       padding 10px
-
 
     &__header
       position relative

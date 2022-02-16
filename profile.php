@@ -10,6 +10,11 @@ if (isset($_GET['action'])) {
         case 'user':
             $user = R::load('users', $_GET['id']);
             $smarty->assign('user', $user);
+            if ($_SESSION['user']->status === 'Администратор') {
+                $smarty->assign('isAdmin', true);
+            } else {
+                $smarty->assign('isAdmin', false);
+            }
             $smarty->assign('posts', $user->ownPostsList);
             $smarty->assign('users', $smarty->fetch('profile.tpl'));
             break;
@@ -38,6 +43,16 @@ if (isset($_GET['action'])) {
         case 'logout':
             unset($_SESSION['user']);
             header("Location:main.php");
+            break;
+        case 'save_profile':
+            $user = R::load('users', $_GET['user_id']);
+            $user->username = $_POST['username'];
+            $user->status = $_POST['status'];
+            $user->email = $_POST['email'];
+            $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            $_SESSION['user']->status = $_POST['status'];
+            R::store($user);
+            header('Location:profile.php?action=user&id=' . $_GET['user_id']);
             break;
     }
 }
