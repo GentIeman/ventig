@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
         case 'user':
             $user = R::load('users', $_GET['id']);
             $smarty->assign('user', $user);
-            if ($_SESSION['user']->status === 'Администратор') {
+            if ($_SESSION['user']->status === 'Admin') {
                 $smarty->assign('isAdmin', true);
             } else {
                 $smarty->assign('isAdmin', false);
