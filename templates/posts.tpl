@@ -15,7 +15,7 @@
                 статью</a>
             {if isset($user) || $user.status == 'Admin'}
                 <a href="main.php?action=delete_post&post_id={$post.id}"
-                   class="post__delete delete btn btn_hover btn_focus btn_delete">Удалить</a>
+                   class="post__delete btn btn_hover btn_focus btn_delete">Удалить</a>
             {/if}
         </article>
     {/foreach}
