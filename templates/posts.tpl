@@ -13,6 +13,10 @@
             <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
             <a href="main.php?action=post&id={$post.id}" class="post__link btn btn_hover btn_focus">Читать
                 статью</a>
+            {if isset($user) || $user.status == 'Admin'}
+                <a href="main.php?action=delete_post&post_id={$post.id}"
+                   class="post__delete delete btn btn_hover btn_focus btn_delete">Удалить</a>
+            {/if}
         </article>
     {/foreach}
 </section>

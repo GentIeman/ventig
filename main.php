@@ -46,6 +46,10 @@ if (isset($_GET['action'])) {
             $comment = R::load('comments', $_GET['comment_id']);
             R::trash($comment);
             header('Location:main.php?action=post&id=' . $_GET['post_id']);
+        case 'delete_post':
+            $post = R::load('posts', $_GET['post_id']);
+            R::trash($post);
+            header('Location:main.php');
     }
 } else {
     $posts = R::findAll('posts');
