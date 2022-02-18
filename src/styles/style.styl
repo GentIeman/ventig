@@ -652,3 +652,64 @@ main
       opacity 0
     }
   }
+
+/* cтили для страницы с пользователя */
+.users
+  display flex
+  justify-content center
+  align-items center
+  gap 0 20px
+  flex-wrap wrap
+  margin-top 40px
+  width 100%
+  height auto
+
+  .card
+    display flex
+    justify-content space-between
+    align-items center
+    position relative
+    width 400px
+    height 200px
+    border solid 1.5px border-color
+    padding 30px
+    border-radius 10px
+    margin-bottom 20px
+
+    &__avatar
+      width 120px
+      height 120px
+      border-radius 50%
+      border solid 1.5px primary-color
+      background-image url('../icons/profile.svg')
+      background-size 60%
+      background-repeat no-repeat
+      background-position center
+
+
+    &__list
+      list-style none
+
+    &__item
+      margin-bottom 10px
+
+      &:last-child
+        margin-bottom 0
+
+    &__username
+      font-style(normal, 1rem, Roboto, text-color)
+
+    &__status,
+    &__email,
+    &__id
+      font-style(normal, .9rem, Roboto, text-color-gr)
+
+    .username
+      color primary-color
+
+    &__edit-btn
+      position absolute
+      bottom 5px
+      left 35px
+      background-color transparent
+      font-size .9rem
