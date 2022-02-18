@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta name="author" content="Shepeleb Ilya">
+    <meta name="author" content="Shepelev Ilya">
     <meta name="copyright" content="Shepelev Ilya">
     <title>Auth</title>
     <link rel="stylesheet" href="./src/styles/style.css">
