@@ -33,7 +33,7 @@ for (let modal of postEditModals) {
     })
 }
 
-if (editProfileBtn) {
+if (editProfileBtn && profileWrap) {
     editProfileBtn.addEventListener('click', () => {
         profileWrap.style.display = 'grid'
     })
