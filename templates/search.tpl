@@ -1,5 +1,5 @@
 <section class="search">
-    <form action="./main.php?action=search_posts" class="search__form" method="post">
+    <form action="./main.php?section=posts&action=search_posts" class="search__form" method="post">
         <label>
             <input type="search" name="title" class="search__input reply reply_focus reply_hover"
                    placeholder="Поиск...">

@@ -9,7 +9,7 @@
         <header class="singin__header">
             <h1 class="singin__headline">Войти</h1>
         </header>
-        <form action="main.php?action=singin" method="post" class="singin__form form">
+        <form action="main.php?section=profile&action=singin" method="post" class="singin__form form">
             <label for="">
                 <input type="text" class="singin__input login reply reply_focus reply_hover" placeholder="Почта"
                        name="email" required>
@@ -27,7 +27,7 @@
         <header class="singup__header">
             <h1 class="singup__headline">Регистрация</h1>
         </header>
-        <form action="main.php?action=singup" method="post" class="singup__form form">
+        <form action="main.php?section=profile&action=singup" method="post" class="singup__form form">
             <label for="">
                 <input type="text" class="singup__input login reply reply_focus reply_hover" placeholder="Логин"
                        name="username" required>

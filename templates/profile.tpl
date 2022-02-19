@@ -18,7 +18,7 @@
         <button class="profile__edit-profile btn btn_hover btn_focus">Редактировать профиль</button>
     </div>
     <div class="profile__logout">
-        <a href="./main.php?action=logout" class="profile__link btn btn_hover btn_focus btn_delete">Выйти</a>
+        <a href="./main.php?section=profile&action=logout" class="profile__link btn btn_hover btn_focus btn_delete">Выйти</a>
     </div>
 </section>
 {if $posts}
@@ -39,13 +39,13 @@
                     публикации: {$post.post_date|date_format:"d.m.Y"}
                 </time>
                 <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
-                <a href="./main.php?action=post&id={$post.id}"
+                <a href="./main.php?section=posts&action=post&id={$post.id}"
                    class="post__link post__read btn btn_hover btn_focus">Читать
                     статью</a>
                 <button id="{$post.id}" class="post__link edit-post post__edit btn btn_hover btn_focus">
                     Редактировать
                 </button>
-                <a href="./main.php?action=delete_post&post_id={$post.id}&user_id={$user.id}"
+                <a href="./main.php?section=posts&action=delete_post&post_id={$post.id}&user_id={$user.id}&location=profile"
                    class="post__link post__delete btn btn_hover btn_focus btn_delete">Удалить</a>
             </article>
             {include file="update_post.tpl"}
@@ -54,7 +54,7 @@
 {/if}
 <button class="add-post btn btn_hover btn_focus" title="Добавить пост"></button>
 {if $isAdmin == true}
-    <a href="./main.php?action=users" class="show-users btn btn_focus btn_hover" title="Все пользователи"></a>
+    <a href="./main.php?section=users" class="show-users btn btn_focus btn_hover" title="Все пользователи"></a>
 {/if}
 {include file="add_post.tpl"}
 {include file="profile_edit.tpl"}

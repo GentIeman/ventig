@@ -27,4 +27,5 @@
         {include file="profile_edit.tpl"}
     {/foreach}
 </section>
-<a href="./main.php?action=profile&id={$user.id}" class="back-btn btn btn_hover btn_focus" title="Назад"></a>
+<a href="./main.php?section=profile&action=profile&id={$user.id}" class="back-btn btn btn_hover btn_focus"
+   title="Назад"></a>

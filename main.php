@@ -13,56 +13,16 @@ $users = R::dispense('users');
 $feedbacks = R::dispense('feedbacks');
 $eventlog = R::dispense('eventlog');
 
-if (isset($_GET['action'])) {
-    switch ($_GET['action']) {
-        case 'post':
-            require('./modules/crud_posts/post.php');
+if (isset($_GET['section'])) {
+    switch ($_GET['section']) {
+        case 'posts':
+            require_once('./modules/crud_posts/post_handler.php');
             break;
-        case 'add_comment':
-            require('./modules/crud_comments/add_comment.php');
-            break;
-        case 'save_comment':
-            require('./modules/crud_comments/edit_comment.php');
-            break;
-        case 'delete_comment':
-            require('./modules/crud_comments/delete_comment.php');
-            break;
-        case 'delete_post':
-            require('./modules/crud_posts/delete_post.php');
-            break;
-        case 'classic_posts':
-            require('./modules/crud_posts/classic.php');
-            break;
-        case 'novelties':
-            require('./modules/crud_posts/novelties.php');
-            break;
-        case 'search':
-        case 'search_posts':
-            require('./modules/crud_posts/search.php');
+        case 'comments':
+            require_once('./modules/crud_comments/comments_handler.php');
             break;
         case 'profile':
-            require('./modules/profile/profile.php');
-            break;
-        case 'add_post':
-            require('./modules/crud_posts/add_post.php');
-            break;
-        case 'logout':
-            require('./modules/profile/logout.php');
-            break;
-        case 'update_post':
-            require('./modules/crud_posts/update_post.php');
-            break;
-        case 'edit_profile':
-            require('./modules/profile/edit_profile.php');
-            break;
-        case 'auth':
-            require('./modules/profile/auth.php');
-            break;
-        case 'singup':
-            require('./modules/profile/singup.php');
-            break;
-        case 'singin':
-            require('./modules/profile/singin.php');
+            require_once('./modules/profile/profile_handler.php');
             break;
         case 'users':
             require('./modules/users.php');

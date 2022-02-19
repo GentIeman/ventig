@@ -1,5 +1,6 @@
 <section class="post-edit" id="modal-window-{$post.id}">
-    <form class="post-edit__form form" action="main.php?action=update_post&post_id={$post.id}&user_id={$user.id}"
+    <form class="post-edit__form form"
+          action="main.php?section=posts&action=update_post&post_id={$post.id}&user_id={$user.id}"
           method="post">
         <fieldset class="form__wrap">
             <label>
