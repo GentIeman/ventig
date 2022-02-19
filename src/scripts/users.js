@@ -8,8 +8,8 @@ for (let btn of editUserBtns) {
     })
 }
 
-for (let profileEditModal of profileEditModals) {
-    profileEditModal.addEventListener('click', (e) => {
-        return e.target !== e.currentTarget ? false : profileEditModal.style.display = 'none'
+for (let modal of profileEditModals) {
+    modal.addEventListener('click', (e) => {
+        return e.target !== e.currentTarget ? false : modal.style.display = 'none'
     })
 }
