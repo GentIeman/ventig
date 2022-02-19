@@ -1,11 +1,5 @@
-{assign var="file_name" value="profile"}
-{if isset($user_edit)}
-    {assign var="file_name" value="users"}
-{elseif !isset($user_edit)}
-    {assign var="user_edit" value=$user}
-{/if}
 <section class="profile__wrap" id="modal-window-{$user_edit.id}">
-    <form class="profile__form form" action="{$file_name}.php?action=save_profile&user_id={$user_edit.id}"
+    <form class="profile__form form" action="./main.php?action=edit_profile&user_id={$user_edit.id}"
           method="post">
         <fieldset class="profile__form-wrap">
             <label>
@@ -17,8 +11,8 @@
                     <input list="status" name="status" class="profile__reply reply reply_focus reply_hover"
                            value="{$user_edit.status}" required placeholder="Статус">
                     <datalist id="status">
-                        <option value="Администратор">Администратор</option>
-                        <option value="Пользователь">Пользователь</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">User</option>
                     </datalist>
                 </label>
             {/if}

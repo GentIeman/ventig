@@ -5,6 +5,8 @@
         {if !empty($user) && $user.id == $comment.users_id}
             <a href="main.php?action=post&edit_comment={$comment.id}&id={$post.id}"
                class="comment__btn edit-btn btn btn_hover btn_focus" title="Редактировать пост"></a>
+        {/if}
+        {if !empty($user) && $user.id == $comment.users_id || $isAdmin == true}
             <a href="main.php?action=delete_comment&comment_id={$comment.id}&post_id={$post.id}"
                class="comment__btn delete-btn btn btn_hover btn_focus" title="Удалить пост"></a>
         {/if}

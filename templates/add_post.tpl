@@ -1,5 +1,5 @@
 <section class="post-editor">
-    <form class="post-editor__form form" action="profile.php?action=add_post&id={$user.id}" method="post">
+    <form class="post-editor__form form" action="main.php?action=add_post&id={$user.id}" method="post">
         <fieldset class="form__wrap">
             <label>
                 <input class="form__title-post reply reply_focus reply_hover" type="text" name="title"
