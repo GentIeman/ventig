@@ -1,5 +1,14 @@
+{if !isset($user_edit)}
+    {assign var="user_edit" value=$user}
+{/if}
+
+{assign var="redirect" value="profile"}
+{if $smarty.get.section == "users"}
+    {assign var="redirect" value="users"}
+{/if}
 <section class="profile__wrap" id="modal-window-{$user_edit.id}">
-    <form class="profile__form form" action="./main.php?action=edit_profile&user_id={$user_edit.id}"
+    <form class="profile__form form"
+          action="./main.php?section=profile&action=edit_profile&user_id={$user_edit.id}&redirect={$redirect}"
           method="post">
         <fieldset class="profile__form-wrap">
             <label>
