@@ -5,5 +5,5 @@ $users = R::load('users', $_GET['user_id']);
 $posts->ownCommentsList[] = $comments;
 $users->ownCommentsList[] = $comments;
 R::storeAll([$posts, $users]);
-header('Location:main.php?action=post&id=' . $_GET['id']);
+header('Location:main.php?section=posts&action=post&id=' . $_GET['id']);
 ?>

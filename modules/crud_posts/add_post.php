@@ -5,5 +5,5 @@ $posts->post_category = $_POST["category"];
 $users = R::load('users', $_GET['id']);
 $users->ownPostsList[] = $posts;
 R::store($users);
-header('Location:main.php?action=profile&id=' . $_GET['id']);
+header('Location:main.php?section=profile&action=profile&id=' . $_GET['id']);
 ?>
