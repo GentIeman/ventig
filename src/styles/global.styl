@@ -1,0 +1,206 @@
+main
+  display grid
+  place-items center
+  position relative
+  margin-top 80px
+
+.btn
+  outline none
+  padding 5px
+  cursor pointer
+  border-radius 5px
+  transition background-color .5s linear,
+  color .5s linear
+  font-style(normal, 1.1rem, Roboto, not-active)
+  text-decoration none
+  border none
+  background-color transparent
+
+  &:is(&_hover:hover, &_focus:focus, &_active):not(&_delete)
+    background-color #313131
+    color primary-color
+
+  &_disabled
+    border solid 2px #ec4d4d
+
+  &_delete
+    border solid 2px #ec4d4d
+    color text-color
+
+    &:hover
+      color #ec4d4d
+
+.search-icon
+  background-image url('../icons/search.svg')
+
+.profile-icon
+  background-image url('../icons/user.svg')
+
+.cross-icon
+  background-image url('../icons/cross.svg')
+
+.edit-icon
+  background-image url('../icons/edit.svg')
+
+.form-icon
+  background-image url('../icons/form.svg')
+
+.users-icon
+  background-image url('../icons/users.svg')
+
+.plus-icon
+  background-image url('../icons/plus.svg')
+
+.reply,
+.draft
+  resize none
+  outline none
+  background transparent
+  font-style(normal, 1rem, Roboto, text-color)
+  border solid 1.5px border-color
+  transition border .2s linear
+  padding 0 10px
+  border-radius 5px
+
+  &:is(&_focus:focus, &_hover:hover)
+    border-color primary-color
+
+.draft
+  padding 10px
+
+  &:is(&_focus:focus, &_hover:hover)
+    border-color primary-color
+
+.send-icon
+  background-image url('../icons/send.svg')
+
+.search-icon
+  background-image url('../icons/search.svg')
+
+.back-icon
+  background-image url('../icons/back.svg')
+
+.back-btn
+  position absolute
+  top 0
+  left 30px
+  border-radius 50%
+
+.post
+  display grid
+  grid-template-rows repeat(auto-fit, minmax(min-content, 1fr))
+  grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
+  width 700px
+  height auto
+  border solid 1.5px border-color
+  border-radius 5px
+  padding 20px
+  margin-bottom 20px
+
+  &__header
+    grid-row 1 / 2
+    grid-column 1 / 4
+    width 100%
+
+  &__headline
+    font-style(bold, 1.5rem, null, primary-color)
+
+  &__description
+    display -webkit-box
+    grid-row 2 / 3
+    grid-column 1 / 4
+    -webkit-line-clamp 6
+    -webkit-box-orient vertical
+    text-align justify
+    width 100%
+    max-height 200px
+    margin 10px 0
+    font-style(normal, 1rem, Roboto, text-color)
+    overflow hidden
+
+  &__category
+    grid-row 3 / 4
+    justify-self start
+    align-self center
+    font-style(normal, 0.9rem, null, text-color-gr)
+    width max-content
+    margin-bottom 5px
+
+  &__date-published
+    grid-row 4 / 5
+    justify-self start
+    align-self center
+    font-style(normal, 0.9rem, null, text-color-gr)
+    width max-content
+
+  &__comments
+    grid-row 5 / 6
+    justify-self start
+    align-self center
+    padding-top 5px
+    font-style(normal, 0.9rem, null, text-color-gr)
+
+  &__link
+    grid-row 5 / 6
+    grid-column 3 / 4
+    justify-self end
+    align-self center
+
+  &__delete
+    grid-column 3 / 4
+    grid-row 7 / 8
+    justify-self end
+    margin-top 10px
+
+  &__read
+    grid-row 6 / 7
+
+  &__edit
+    grid-column 1 / 2
+    grid-row 6 / 7
+    justify-self start
+    background-color transparent
+
+.icon
+  width 41px
+  height 41px
+  background-size 50%
+  background-repeat no-repeat
+  background-position center
+
+.icon-small
+  width 35px
+  height 35px
+  background-size 50%
+  background-repeat no-repeat
+  background-position center
+
+.icon-big
+  width 60px
+  height 60px
+  background-size 50%
+  background-repeat no-repeat
+  background-position center
+
+.toolbar
+  display flex
+  justify-content center
+  align-items center
+  flex-direction column
+  width auto
+  gap 10px 0
+
+  &_right
+    position fixed
+    bottom 30px
+    right 30px
+
+  &_absolute
+    position absolute
+    top 50%
+    left 105%
+    transform translate(-50%, -50%)
+
+  &__link,
+  &__btn
+    border solid 1.5px primary-color
