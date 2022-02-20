@@ -19,7 +19,7 @@
             <section class="feedback">
                 <p class="feedback__content">{$feedback.feedback_content}</p>
                 <time class="feedback__date">Дата публикации: {$feedback.feedback_date}</time>
-                <p class="feedback__user">От пользователя: {$feedback.user_id}</p>
+                <p class="feedback__user">От пользователя: {$feedback.feedback_user.username}</p>
             </section>
         {/foreach}
     </section>
