@@ -8,5 +8,4 @@ if (isset($_SESSION['user'])) {
 $currentUser = R::load('users', $_SESSION['user']->id);
 $smarty->assign('currentUser', $currentUser);
 $smarty->assign('content', $smarty->fetch('users.tpl'));
-
 ?>
