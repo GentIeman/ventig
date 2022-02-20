@@ -58,7 +58,8 @@
         <a href="./main.php?section=users" class="toolbar__link btn btn_focus btn_hover icon users-icon"
            title="Все пользователи"></a>
     {/if}
-    <a href="./main.php?section=feedbacks" class="toolbar__link btn btn_focus btn_hover icon form-icon"
+    <a href="./main.php?section=feedbacks&action=feedbacks&user_id={$user.id}"
+       class="toolbar__link btn btn_focus btn_hover icon form-icon"
        title="Оставить отзыв"></a>
 </section>
 {include file="add_post.tpl"}

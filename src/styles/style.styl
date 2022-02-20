@@ -494,14 +494,47 @@ body
       background-color transparent
       font-size .9rem
 
-///*Стилия для формы отправки отзывов*/
-//.post-review
-//  display grid
-//  place-items center
-//  width 1000px
-//
-//  &__header
-//    position relative
-//
-//  &__headline
-//    font-style(bold, 1.3rem, Roboto, text-color)
+/*Стилия для формы отправки отзывов*/
+.post-review
+  display grid
+  place-items center
+  width 1000px
+
+  &__header
+    position relative
+    margin-bottom 30px
+
+  &__headline
+    font-style(bold, 1.3rem, Roboto, text-color)
+
+  &__form
+    display grid
+    place-items center
+    gap 10px 0
+
+/* Стилия для отзывов */
+.feedbacks
+  display grid
+  place-items center
+  width auto
+  height auto
+  margin-top 30px
+  gap 30px 0
+
+  .feedback
+    width 700px
+    height auto
+    padding 30px
+    border solid 1.5px border-color
+    border-radius 5px
+
+    &__content
+      text-align justify
+      width 100%
+      height auto
+      word-wrap break-word
+      font-style(normal, 1rem, Roboto, text-color)
+
+    &__date,
+    &__user
+      font-style(normal, .8rem, Roboto, text-color-gr)

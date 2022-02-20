@@ -25,7 +25,10 @@ if (isset($_GET['section'])) {
             require_once('./modules/profile/profile_handler.php');
             break;
         case 'users':
-            require('./modules/users.php');
+            require_once('./modules/users.php');
+            break;
+        case 'feedbacks':
+            require_once('./modules/feedbacks/feedbacks_handler.php');
             break;
     }
 } else {
