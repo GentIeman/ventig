@@ -1,4 +1,5 @@
 <?php
+$users = R::dispense('users');
 $users->username = $_POST['username'];
 $users->email = $_POST['email'];
 $users->password = password_hash($_POST['password'], PASSWORD_DEFAULT);

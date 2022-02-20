@@ -1,4 +1,5 @@
 <?php
+$posts = R::dispense('posts');
 $posts->post_title = $_POST["title"];
 $posts->post_description = $_POST["description"];
 $posts->post_category = $_POST["category"];

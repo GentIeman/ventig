@@ -6,13 +6,6 @@ require("./modules/db.php");
 require('./modules/admin.php');
 require('./modules/user.php');
 
-// глобальные переменный для взаимодейсвия с бд
-$comments = R::dispense('comments');
-$posts = R::dispense('posts');
-$users = R::dispense('users');
-$feedbacks = R::dispense('feedbacks');
-$eventlog = R::dispense('eventlog');
-
 if (isset($_GET['section'])) {
     switch ($_GET['section']) {
         case 'posts':
