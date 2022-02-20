@@ -10,5 +10,5 @@
         публикации: {$post.post_date|date_format:"d.m.Y"}</time>
     <div class="post__comments">Комментариев: {$post.ownCommentsList|@count}</div>
 </article>
-<a href="main.php" class="back-btn btn btn_hover btn_focus" title="Назад"></a>
+<a href="main.php" class="back-btn btn btn_hover btn_focus back-icon icon-big" title="Назад"></a>
 {include file="comments.tpl"}

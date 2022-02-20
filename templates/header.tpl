@@ -16,19 +16,19 @@
             </li>
             <li class="header__item">
                 <a href="./main.php?section=posts&action=search"
-                   class="header__link header__icon btn btn_hover btn_focus search-icon {if isset($search) === true} btn_active {/if}"
+                   class="header__link btn btn_hover btn_focus icon-small search-icon {if isset($search) === true} btn_active {/if}"
                    title="Поиск"></a>
             </li>
             {if !empty($user)}
                 <li class="header__item">
                     <a href="./main.php?section=profile&action=profile&id={$user.id}"
-                       class="header__link header__icon btn btn_hover btn_focus profile-icon {if isset($profile) === true} btn_active {/if}"
+                       class="header__link btn btn_hover btn_focus icon-small profile-icon {if isset($profile) === true} btn_active {/if}"
                        title="Профиль"></a>
                 </li>
             {else}
                 <li class="header__item">
                     <a href="./main.php?section=profile&action=auth"
-                       class="header__link header__icon btn btn_hover btn_focus profile-icon {if isset($auth) === true} btn_active {/if}"
+                       class="header__link btn btn_hover btn_focus icon-small profile-icon {if isset($auth) === true} btn_active {/if}"
                        title="Профиль"></a>
                 </li>
             {/if}

@@ -15,7 +15,7 @@
         </li>
     </ul>
     <div class="profile__edit">
-        <button class="profile__edit-profile btn btn_hover btn_focus">Редактировать профиль</button>
+        <button class="profile__edit-btn btn btn_hover btn_focus">Редактировать профиль</button>
     </div>
     <div class="profile__logout">
         <a href="./main.php?section=profile&action=logout" class="profile__link btn btn_hover btn_focus btn_delete">Выйти</a>
@@ -52,9 +52,14 @@
         {/foreach}
     </section>
 {/if}
-<button class="add-post btn btn_hover btn_focus" title="Добавить пост"></button>
-{if $isAdmin == true}
-    <a href="./main.php?section=users" class="show-users btn btn_focus btn_hover" title="Все пользователи"></a>
-{/if}
+<section class="toolbar toolbar_right">
+    <button class="toolbar__btn btn btn_hover btn_focus icon plus-icon" title="Добавить пост"></button>
+    {if $isAdmin == true}
+        <a href="./main.php?section=users" class="toolbar__link btn btn_focus btn_hover icon users-icon"
+           title="Все пользователи"></a>
+    {/if}
+    <a href="./main.php?section=feedbacks" class="toolbar__link btn btn_focus btn_hover icon form-icon"
+       title="Оставить отзыв"></a>
+</section>
 {include file="add_post.tpl"}
 {include file="profile_edit.tpl"}

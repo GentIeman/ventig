@@ -2,22 +2,22 @@
 if (isset($_GET['action'])) {
     switch ($_GET['action']) {
         case 'logout':
-            require('logout.php');
+            require_once('logout.php');
             break;
         case 'edit_profile':
-            require('edit_profile.php');
+            require_once('edit_profile.php');
             break;
         case 'auth':
-            require('auth.php');
+            require_once('auth.php');
             break;
         case 'singup':
-            require('singup.php');
+            require_once('singup.php');
             break;
         case 'singin':
-            require('singin.php');
+            require_once('singin.php');
             break;
         case 'profile':
-            require('profile.php');
+            require_once('profile.php');
             break;
     }
 }

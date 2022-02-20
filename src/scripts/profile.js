@@ -1,8 +1,8 @@
-const addPostBtn = document.querySelector('.add-post')
+const addPostBtn = document.querySelector('.toolbar__btn')
 const postEditor = document.querySelector('.post-editor')
 const postEditModals = document.querySelectorAll('.post-edit')
 const editPostBtns = document.querySelectorAll('.edit-post')
-const editProfileBtn = document.querySelector('.profile__edit-profile')
+const editProfileBtn = document.querySelector('.profile__edit-btn')
 const profileWrap = document.querySelector('.profile__wrap')
 
 if (addPostBtn) {

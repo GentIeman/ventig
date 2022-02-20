@@ -11,11 +11,11 @@
         </header>
         <form action="main.php?section=profile&action=singin" method="post" class="singin__form form">
             <label for="">
-                <input type="text" class="singin__input login reply reply_focus reply_hover" placeholder="Почта"
+                <input type="text" class="singin__reply login reply reply_focus reply_hover" placeholder="Почта"
                        name="email" required>
             </label>
             <label for="">
-                <input type="password" class="singin__input password reply reply_focus reply_hover"
+                <input type="password" class="singin__reply password reply reply_focus reply_hover"
                        placeholder="Пароль"
                        name="password" required>
             </label>
@@ -29,15 +29,15 @@
         </header>
         <form action="main.php?section=profile&action=singup" method="post" class="singup__form form">
             <label for="">
-                <input type="text" class="singup__input login reply reply_focus reply_hover" placeholder="Логин"
+                <input type="text" class="singup__reply login reply reply_focus reply_hover" placeholder="Логин"
                        name="username" required>
             </label>
             <label for="">
-                <input type="email" class="singup__input email reply reply_focus reply_hover" placeholder="Почта"
+                <input type="email" class="singup__reply email reply reply_focus reply_hover" placeholder="Почта"
                        name="email" required>
             </label>
             <label for="">
-                <input type="password" class="singup__input password reply reply_focus reply_hover"
+                <input type="password" class="singup__reply password reply reply_focus reply_hover"
                        placeholder="Пароль"
                        name="password" required>
             </label>

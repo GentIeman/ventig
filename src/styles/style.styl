@@ -1,5 +1,6 @@
 @import "variables.styl"
 @import "mixins.styl"
+@import "global.styl"
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap')
 
 *
@@ -72,56 +73,6 @@ body
     width 100%
     height inherit
 
-  &__link
-    display flex
-    justify-content center
-    align-items center
-
-  &__icon
-    background-size 60%
-    background-repeat no-repeat
-    background-position center
-    width 31px
-    height 31px
-
-  .search-icon
-    background-image url('../icons/search.svg')
-
-  .profile-icon
-    background-image url('../icons/user.svg')
-
-/* глобалньные стили для кнопок */
-.btn
-  outline none
-  padding 5px
-  cursor pointer
-  border-radius 5px
-  transition background-color .5s linear,
-  color .5s linear
-  font-style(normal, 1.1rem, Roboto, not-active)
-  text-decoration none
-  border none
-
-  &:is(&_hover:hover, &_focus:focus, &_active):not(&_delete)
-    background-color #313131
-    color primary-color
-
-  &_disabled
-    border solid 2px #ec4d4d
-
-  &_delete
-    border solid 2px #ec4d4d
-    color text-color
-
-    &:hover
-      color #ec4d4d
-
-
-main
-  display grid
-  place-items center
-  position relative
-  margin-top 80px
 
 /* стили для блока с постами */
 .posts
@@ -131,100 +82,14 @@ main
   flex-direction column
   width 100%
 
-.post
-  display grid
-  grid-template-rows repeat(auto-fit, minmax(min-content, 1fr))
-  grid-template-columns repeat(auto-fit, minmax(200px, 1fr))
-  width 700px
-  height auto
-  border solid 1.5px border-color
-  border-radius 5px
-  padding 20px
-  margin-bottom 20px
-
-  &__header
-    grid-row 1 / 2
-    grid-column 1 / 4
-    width 100%
-
-  &__headline
-    font-style(bold, 1.5rem, null, primary-color)
-
-  &__description
-    display -webkit-box
-    grid-row 2 / 3
-    grid-column 1 / 4
-    -webkit-line-clamp 6
-    -webkit-box-orient vertical
-    text-align justify
-    width 100%
-    max-height 200px
-    margin 10px 0
-    font-style(normal, 1rem, Roboto, text-color)
-    overflow hidden
-
-  &__category
-    grid-row 3 / 4
-    justify-self start
-    align-self center
-    font-style(normal, 0.9rem, null, text-color-gr)
-    width max-content
-    margin-bottom 5px
-
-  &__date-published
-    grid-row 4 / 5
-    justify-self start
-    align-self center
-    font-style(normal, 0.9rem, null, text-color-gr)
-    width max-content
-
-  &__comments
-    grid-row 5 / 6
-    justify-self start
-    align-self center
-    padding-top 5px
-    font-style(normal, 0.9rem, null, text-color-gr)
-
-  &__link
-    grid-row 5 / 6
-    grid-column 3 / 4
-    justify-self end
-    align-self center
-
-  &__delete
-    grid-column 3 / 4
-    grid-row 7 / 8
-    justify-self end
-    margin-top 10px
-
-  &__read
-    grid-row 6 / 7
-
-  &__edit
-    grid-column 1 / 2
-    grid-row 6 / 7
-    justify-self start
-    background-color transparent
-
-.back-btn
-  position absolute
-  top 0
-  left 30px
-  width 50px
-  height 50px
-  background-image url('../icons/back.svg')
-  background-size 80%
-  background-repeat no-repeat
-  background-position center
-  border-radius 50%
-  z-index 10
 
 /* стили для формы с комменатриями */
 .comments
   position relative
   height auto
 
-  .form
+  .comment-edit,
+  .comment-editor
     display grid
     place-items center start
     grid-template-columns auto 31px
@@ -243,24 +108,9 @@ main
       width 50%
       height 1.5px
 
-
     &__reply
       width 660px
       height 33px
-
-    &__btn
-      background-color transparent
-      width max-content
-
-    &__icon
-      width 33px
-      height 33px
-      background-size 60%
-      background-repeat no-repeat
-      background-position center
-
-    .send
-      background-image url('../icons/send.svg')
 
   .comment
     display grid
@@ -285,43 +135,10 @@ main
       word-wrap break-word
 
 
-    &__date-publication,
-    width max-content
+    &__date-publication
+      width max-content
       font-style(normal, 0.9rem, null, text-color-gr)
 
-    &__btn
-      width 31px
-      height 31px
-      background-size 65%
-      background-repeat no-repeat
-      background-position center
-
-    .edit-btn
-      position absolute
-      top 50%
-      right -60px
-      transform translate(-50%, -50%)
-      background-image url('../icons/edit.svg')
-
-    .delete-btn
-      position absolute
-      top 50%
-      right -100px
-      transform translate(-50%, -50%)
-      background-image url('../icons/cross.svg')
-
-.reply
-  resize none
-  outline none
-  background transparent
-  font-style(normal, 1rem, Roboto, text-color)
-  border solid 1.5px border-color
-  transition border .2s linear
-  padding 0 10px
-  border-radius 10px
-
-  &:is(&_focus:focus, &_hover:hover)
-    border-color primary-color
 
 /* стили для профиля */
 .profile
@@ -362,38 +179,37 @@ main
     bottom 20px
     right 20px
 
-  &__wrap
-    display none
-    place-items center
-    position fixed
-    top 0
-    left 0
-    width 100%
-    height 100vh
-    background-color rgba(0, 0, 0, 0.5)
-    z-index 2
-
-  &__edit-profile
+  &__edit-btn
     position absolute
     bottom 10px
     left 30px
     background-color transparent
     font-size 1rem
 
-  &__form
-    width 800px
-    height auto
 
-  &__form-wrap
+/* стили для окна редактирования пользователя */
+.profile-edit
+  display none
+  place-items center
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100vh
+  background-color rgba(0, 0, 0, 0.5)
+  z-index 2
+
+  &__form
     display flex
     flex-direction column
     position relative
+    width 800px
+    height auto
+    padding 20px
     gap 20px
     border solid 1.5px border-color
     border-radius 5px
     background-color back-color
-    padding 20px
-    height inherit
 
   &__reply
     width 100%
@@ -405,7 +221,6 @@ main
     background-color transparent
     align-self center
 
-
 .user-posts
   margin-top 10px
 
@@ -414,19 +229,6 @@ main
 
   &__headline
     font-style(normal, 2rem, Roboto, text-color)
-
-.add-post
-  position fixed
-  bottom 30px
-  right 30px
-  width 40px
-  height 40px
-  background-image url('../icons/plus.svg')
-  background-size 50%
-  background-repeat no-repeat
-  background-position center
-  border solid 1.5px primary-color
-  background-color transparent
 
 
 /* Стили для формы создания и редактирования поста */
@@ -442,65 +244,53 @@ main
   background-color rgba(0, 0, 0, 0.5)
   z-index 3
 
-  &__btn
-    width max-content
-    background-color transparent
-    align-self center
-
-  .form
+  &__form
+    display flex
+    flex-direction column
+    position relative
+    gap 20px
+    border solid 1.5px border-color
+    border-radius 5px
+    background-color back-color
+    padding 20px
     width 800px
     height auto
 
-    &__wrap
-      display flex
-      flex-direction column
-      position relative
-      gap 20px
-      border solid 1.5px border-color
-      border-radius 5px
-      background-color back-color
-      padding 20px
-      height inherit
+  &__reply
+    width 100%
+    height 40px
 
-    &__title-post
-      width 100%
-      height 40px
-      border-radius 5px
+  &__draft
+    width 100%
+    height 60px
 
-    &__content-post
-      width 100%
-      height 60px
-      border-radius 5px
-      padding 10px
+  &__header
+    position relative
 
-    &__header
-      position relative
+  &__headline
+    font-style(normal, 1.2rem, Roboto, text-color)
 
-    &__headline
-      font-style(normal, 1.2rem, Roboto, text-color)
+  &__btn
+    align-self center
+    width max-width
+    border solid 1.5px primary-color
 
-    .categorys
-      display flex
-      justify-content start
-      align-items end
-      flex-direction column
-      width max-content
+.categorys
+  display flex
+  justify-content start
+  align-items end
+  flex-direction column
+  width max-content
 
-      &__title
-        display flex
-        justify-content start
-        align-items center
-        font-style(normal, 1rem, Roboto, text-color)
+  &__title
+    display flex
+    justify-content start
+    align-items center
+    font-style(normal, 1rem, Roboto, text-color)
 
-      &__radio
-        margin 10px 0 10px 20px
-        accent-color primary-color
-
-    &__btn
-      align-self center
-      width 150px
-      background-color transparent
-      border solid 1.5px primary-color
+  &__radio
+    margin 10px 0 10px 20px
+    accent-color primary-color
 
 /* стили для страницы поиска */
 .search
@@ -515,20 +305,11 @@ main
     width inherit
     margin-bottom 30px
 
-  &__input
+  &__reply
     border-radius 5px
     width 600px
     height 40px
     font-size 1.5rem
-
-  &__btn
-    width 41px
-    height 41px
-    background-image url('../icons/search.svg')
-    background-size 50%
-    background-repeat no-repeat
-    background-position center
-    background-color transparent
 
 /* стилия для аутентификации */
 .auth
@@ -565,7 +346,7 @@ main
       justify-content space-between
       height 400px
 
-    &__input
+    &__reply
       width 400px
       height 40px
       margin-bottom 30px
@@ -622,6 +403,7 @@ main
       bottom -60px
       right -20%
 
+/* стилия для окна с подсказкой */
 .hint
   position absolute
   top 20%
@@ -634,7 +416,6 @@ main
   border-radius 10px
   animation fade-up 3s ease-out
   opacity 0
-
 
   &__content
     font-style(normal, 1rem, Roboto, text-color)
@@ -686,7 +467,6 @@ main
       background-repeat no-repeat
       background-position center
 
-
     &__list
       list-style none
 
@@ -714,15 +494,14 @@ main
       background-color transparent
       font-size .9rem
 
-.show-users
-  position fixed
-  bottom 80px
-  right 30px
-  width 40px
-  height 40px
-  background-image url('../icons/users.svg')
-  background-size 50%
-  background-repeat no-repeat
-  background-position center
-  border solid 1.5px primary-color
-  background-color transparent
+///*Стилия для формы отправки отзывов*/
+//.post-review
+//  display grid
+//  place-items center
+//  width 1000px
+//
+//  &__header
+//    position relative
+//
+//  &__headline
+//    font-style(bold, 1.3rem, Roboto, text-color)
