@@ -3,9 +3,9 @@ const postEditor = document.querySelector('.post-editor')
 const postEditModals = document.querySelectorAll('.post-edit')
 const editPostBtns = document.querySelectorAll('.edit-post')
 const editProfileBtn = document.querySelector('.profile__edit-btn')
-const profileWrap = document.querySelector('.profile__wrap')
+const profileEditModal = document.querySelector('.profile-edit')
 
-if (addPostBtn) {
+if (addPostBtn && postEditor) {
     addPostBtn.addEventListener('click', () => {
         postEditor.style.display = 'grid'
     })
@@ -27,20 +27,21 @@ if (editPostBtns) {
         })
     }
 }
+
 for (let modal of postEditModals) {
     modal.addEventListener('click', (e) => {
         return e.target !== e.currentTarget ? false : modal.style.display = 'none'
     })
 }
 
-if (editProfileBtn && profileWrap) {
+if (editProfileBtn && profileEditModal) {
     editProfileBtn.addEventListener('click', () => {
-        profileWrap.style.display = 'grid'
+        profileEditModal.style.display = 'grid'
     })
 }
 
-if (profileWrap) {
-    profileWrap.addEventListener('click', (e) => {
-        return e.target !== e.currentTarget ? false : profileWrap.style.display = 'none'
+if (profileEditModal) {
+    profileEditModal.addEventListener('click', (e) => {
+        return e.target !== e.currentTarget ? false : profileEditModal.style.display = 'none'
     })
 }
