@@ -5,6 +5,7 @@ $smarty = new Smarty();
 require("./modules/db.php");
 require('./modules/admin.php');
 require('./modules/user.php');
+require_once('./modules/event_handler.php');
 
 if (isset($_GET['section'])) {
     switch ($_GET['section']) {

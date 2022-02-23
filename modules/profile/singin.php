@@ -10,4 +10,7 @@ if ($user) {
 } else {
     $smarty->assign('isUser', false);
 }
+if ($_SESSION['user']->status == 'Admin') {
+    eventHandler("Вошел в систему");
+}
 ?>
